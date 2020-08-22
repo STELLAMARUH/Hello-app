@@ -33,3 +33,6 @@ private fun Nothing?.setOnClickListener(any: Any) {
 open class AppCompatActivity {
 
 }
+
+class MainActivity {
+}
