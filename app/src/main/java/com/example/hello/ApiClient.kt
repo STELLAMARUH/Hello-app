@@ -2,12 +2,8 @@ package layout
 
 import java.net.URI.create
 
-
-import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
-object ApiClient {var client = OkHttpClient.Builder().build()
+object ApiClient {
+    var client = OkHttpClient.Builder().build()
 
     var retrofit = Retrofit.Builder()
         .baseUrl("https://courses-service.herokuapp.com/")
@@ -18,4 +14,15 @@ object ApiClient {var client = OkHttpClient.Builder().build()
     fun <T> buildService(service: Class<T>): T {
         return retrofit.create(service)
     }
+}
+
+class OkHttpClient {
+    class Builder {
+        fun build(): Any {
+
+        }
+
+    }
+
+}
 }

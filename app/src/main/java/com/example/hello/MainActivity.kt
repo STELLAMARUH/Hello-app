@@ -2,10 +2,15 @@ package com.example.hello
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity(), Parcelable {
 
+
+    constructor(parcel: Parcel) : this() {
+    }
 
     fun onCreate(savedInstanceState: Bundle?, etUsername: Any) {
         super.onCreate(savedInstanceState)
@@ -23,6 +28,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun setContentView(activityMain: Int) {
         TODO("Not yet implemented")
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<MainActivity> {
+        override fun createFromParcel(parcel: Parcel): MainActivity {
+            return MainActivity(parcel)
+        }
+
+        override fun newArray(size: Int): Array<MainActivity?> {
+            return arrayOfNulls(size)
+        }
     }
 }
 

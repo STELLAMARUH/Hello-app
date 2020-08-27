@@ -14,8 +14,9 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(baseContext, MainActivity::class.java)
             startActivity(intent)
         } else {
-            val intent = Intent(baseContext, CoursesActivity::class.java)
-            startActivity(intent)
+            val intent = Intent(baseContext, CoursesActivity::class.java).also {
+                startActivity(it)
+            }
         }
 
     }
